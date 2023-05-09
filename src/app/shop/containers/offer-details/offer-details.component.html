@@ -1,0 +1,51 @@
+<div class="offer-details">
+  <ng-container *ngIf="!trip">
+    <p>No such trip was found</p>
+    <a routerLink="home">GO BACK</a>
+  </ng-container>
+  <ng-container *ngIf="trip">
+
+    <div class="go-back">
+      <div routerLink="/offers"> go back &#10155;</div>
+    </div>
+    <h1>
+      <i>{{trip.name}}</i> trip details!
+    </h1>
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="item main">
+          <img src="{{currentUrl}}" alt="picture" />
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="prev nav-btn" (click)="changePicture()"><</div>
+        <div class="next nav-btn" (click)="changePicture()">></div>
+      </div>
+    </div>
+    <p>wolne miejsca {{trip.quantity}}</p>
+    <p>
+      {{trip.description}}
+    </p>
+    <div class="when-info">
+      {{trip.startDate}}
+      {{trip.endDate}}
+      <p> price: {{trip.price | currency: 'PLN'}}</p>
+    </div>
+
+    <div class="star-info">
+      Trip has not been rated yet
+    </div>
+
+    <div class="reservation-info">
+      <ng-container *ngIf="tripReservation">
+        Number of places currently reserved: {{tripReservation.quantity}}
+      </ng-container>
+
+      <button *ngIf="trip.quantity>0" (click)="addButton()">Make your reservation</button>
+      <button *ngIf="tripReservation && tripReservation.quantity >0" (click)="decrementReservation()">Cancel reservation</button>
+
+    </div>
+
+
+  </ng-container>
+</div>

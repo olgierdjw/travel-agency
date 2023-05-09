@@ -1,0 +1,44 @@
+.reservation-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 7px;
+  height: 150px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-bottom: 15px;*/
+  height: 20%;
+}
+
+.bottom {
+  width: 100%;
+  display: flex;
+  padding: 3px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: calc(80% - 15px);
+
+}
+
+.summary {
+  padding: 5px 20px;
+
+  border: 1px solid black;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}

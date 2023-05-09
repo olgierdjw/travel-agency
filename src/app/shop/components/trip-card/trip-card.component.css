@@ -1,0 +1,107 @@
+#trip-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: rgba(211, 211, 211, 0.1);
+    height: 100%;
+    overflow: hidden;
+}
+
+#top-title {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.83);
+    color: white;
+    font-size: 20px;
+    padding: 8px;
+}
+
+#mid-container {
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 123, 255, 0.03);
+}
+
+#reservation-zone {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.83);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    color: white;
+}
+
+#reservation-zone #row-element {
+    width: 33%;
+}
+
+
+#mid-container #details {
+    height: 20%;
+    padding-top: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mid-container #more-details {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+#mid-container #more-details #left, #mid-container #more-details #right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#mid-container #more-details #left {
+    flex: 1;
+}
+
+#mid-container #more-details #right {
+    flex: 2;
+}
+
+
+.photo-place {
+    display: flex;
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.photo {
+    object-fit: fill;
+    object-position: center;
+}
+
+.photo:hover {
+    cursor: pointer;
+}
+
+.btn {
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 2px;
+    font-size: 18px;
+
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}

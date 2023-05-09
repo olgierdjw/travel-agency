@@ -1,0 +1,31 @@
+<div class="trip-manager">
+  <div class="title">
+    Trip manager
+  </div>
+
+  <div class="trip-list">
+    <div *ngFor="let trip of trips | async" class="trip-row">
+      <div class="data">
+        {{trip.name}}, {{trip.destination}}
+      </div>
+      <div class="change-zone">
+        <button (click)="handleRowEditButton(trip)">edit</button>
+        <button (click)="handleDeleteButton(trip)">delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="edit-zone">
+    <div class="add-zone">
+      <div>
+        <b>{{tripToEdit ? 'edytuj' : 'dodaj nową ofertę'}}</b> <i>{{tripToEdit?.name}}</i>
+        <button (click)="tripToEdit = null" *ngIf="tripToEdit">X</button>
+      </div>
+
+      <app-offer-form [defaultData]="tripToEdit ? tripToEdit : null"
+                      (addNewItem)="handleTripSend($event)"
+      [doneText]="tripToEdit ? 'update' : 'add new'"></app-offer-form>
+    </div>
+  </div>
+
+</div>

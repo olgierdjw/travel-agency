@@ -1,0 +1,45 @@
+<div class="history">
+
+    <div class="filter-zone">
+        <div><input type="checkbox" (change)="this.showBefore = !this.showBefore; filterTrips();"
+                    [checked]="showBefore">
+            before
+        </div>
+        <div><input type="checkbox" (change)="this.showCurrent = !this.showCurrent; filterTrips();"
+                    [checked]="showCurrent"> in progress
+        </div>
+        <div><input type="checkbox" (change)="this.showAfter = !this.showAfter; filterTrips();" [checked]="showAfter">
+            completed
+        </div>
+    </div>
+
+    <div id="empty-list-info" *ngIf="!filteredHistory.length"> Previous orders not found.</div>
+
+    <div id="history-list">
+        <ng-container *ngFor="let orderDetails of filteredHistory">
+            <ng-container *ngIf="getTripById(orderDetails.offerId)">
+                <div class="history-element">
+                    <div class="info">
+                        <div>
+                            {{orderDetails.quantity}} X {{getTripById(orderDetails.offerId)?.price | currency: 'PLN'}}
+                        </div>
+
+                        <div>
+                            order time: {{orderDetails.orderDate | date}}
+                        </div>
+
+                    </div>
+                    <div class="details">
+                        {{getTripById(orderDetails.offerId)?.destination}}
+                        {{getTripById(orderDetails.offerId)?.startDate}}
+                        -> {{getTripById(orderDetails.offerId)?.endDate}}
+                    </div>
+                    <div class="status">
+                        {{tripStatus(orderDetails.offerId)}}
+                    </div>
+                </div>
+            </ng-container>
+
+        </ng-container>
+    </div>
+</div>

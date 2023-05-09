@@ -1,0 +1,80 @@
+<div class="user-auth-panel">
+
+
+    <div class="login-register">
+
+        <div class="title">
+            REGISTRATION
+        </div>
+
+        <form #form="ngForm" (ngSubmit)="handleRegister(form)" class="form">
+            <label>
+                <div class="info-place">
+                    <p [style.display]="!username.invalid || username.untouched ? 'none' : 'flex'">
+                        The username should be at least 5 characters.
+                    </p>
+                </div>
+                <span>Username</span>
+                <input type="text" name="readName" class="input" ngModel minlength="5" required #username="ngModel"/>
+            </label>
+            <label>
+                <div class="info-place">
+                    <p [style.display]="!emailRegister.invalid || emailRegister.untouched ? 'none' : 'flex'">
+                        Invalid email address.
+                    </p>
+                </div>
+                <span>E-mail</span>
+                <input type="email" name="readEmail" class="input" ngModel minlength="4" required
+                       #emailRegister="ngModel"/>
+            </label>
+            <label>
+                <div class="info-place">
+                    <p [style.display]="!passwordRegister.invalid || passwordRegister.untouched ? 'none' : 'flex'">
+                        Incorrect password.
+                    </p>
+                </div>
+                <span>Password</span>
+                <input type="password" name="readPassword" minlength="6" class="input" ngModel required
+                       #passwordRegister="ngModel"/>
+            </label>
+            <div class="finish">
+                <button type="submit" [disabled]="form.invalid">Register</button>
+            </div>
+        </form>
+    </div>
+    <div class="login-register">
+
+
+        <div class="title">
+            LOG IN
+        </div>
+
+        <form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm)" class="form">
+            <label>
+                <div class="info-place">
+                    <p [style.display]="!email.invalid || email.untouched ? 'none' : 'flex'">
+                        Invalid email address.
+                    </p>
+                </div>
+                <span>E-mail</span>
+                <input type="email" name="readEmail" class="input" ngModel required #email="ngModel"/>
+            </label>
+            <label>
+                <div class="info-place">
+                    <p [style.display]="!password.invalid || password.untouched ? 'none' : 'flex'">
+                        Incorrect password.
+                    </p>
+                </div>
+                <span>Password</span>
+                <input type="password" name="readPassword" minlength="6" class="input" ngModel required
+                       #password="ngModel"/>
+            </label>
+            <div class="finish">
+                <button (click)="exampleUserAccess()">example user</button>
+                <br/>
+                <button type="submit" [disabled]="loginForm.invalid">Next</button>
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+<nav class="navbar">
+    <div style="flex: 3">
+        <p>COMPANYNAME</p>
+    </div>
+
+
+    <div class="redirect-list">
+        <div class="change-page" routerLink="home">HOME</div>
+        <div class="change-page" routerLink="offers">FIND YOUR TRIP</div>
+        <div *ngIf="showHistoryButton()" class="change-page" routerLink="history">HISTORY</div>
+        <div *ngIf="showManagerButton()" class="change-page" routerLink="trip-manager">TRIP MANAGER</div>
+        <div *ngIf="showAdminButton()" class="change-page" routerLink="admin">ADMIN PANEL</div>
+    </div>
+
+    <div class="right">
+
+
+        <div *ngIf="userData" class="basket-button" (click)="basketButton()">
+            <img class="basket-icon" src="../../../../assets/cart.png">
+            <div class="summary">{{rows}}/{{totalQuantity}}</div>
+        </div>
+
+
+        <div *ngIf="userData">
+            <p>Hello, <span class="user-page-link" (click)="userPageLink()">{{userData.username}}!</span></p>
+            <div *ngIf="incomingTrips > 0">{{incomingTrips}} upcoming</div>
+        </div>
+
+        <div>
+            <ng-container *ngIf="userData">
+                <button (click)="handleLogout()">log out</button>
+            </ng-container>
+            <ng-container *ngIf="!userData && showLoginButton()">
+                <button (click)="userPageLink()">log in</button>
+            </ng-container>
+        </div>
+
+
+    </div>
+</nav>

@@ -1,0 +1,27 @@
+<div id="offer-list">
+
+    <div *ngIf="activeUser" class="reservations">
+        <app-reservation-list></app-reservation-list>
+    </div>
+
+    <!--  <div class="search">-->
+    <!--    <app-search></app-search>-->
+    <!--  </div>-->
+
+    <div id="list">
+        <ng-container *ngFor="let offer of offers">
+            <app-trip-card
+                    [trip]="offer"
+                    [canDelete]="showDeleteReservationButton(offer)"
+                    (reservationAdd)="handleReservation($event, true)"
+                    (reservationRemove)="handleReservation($event, false)"
+                    (deleteTrip)="handleDeleteTrip($event)"
+                    [previewOnly] = !activeUser
+                    style="border-radius: 6px"
+                    [style.border]="minPriceValue === offer.price ? '3px solid red' : maxPriceValue === offer.price ? '3px solid green' : null">
+            </app-trip-card>
+        </ng-container>
+    </div>
+
+</div>
+

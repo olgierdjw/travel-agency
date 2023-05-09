@@ -1,0 +1,101 @@
+.navbar {
+  width: 100%;
+  height: 54px;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.change-page {
+  padding: 10px;
+  margin: 0 20px;
+  color: #343434;
+}
+
+.change-page:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.redirect-list {
+  display: flex;
+  flex: 5;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
+
+.right {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: center;
+}
+
+.basket-button {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  margin-right: 20px;
+  position: relative;
+}
+
+.summary {
+  position: absolute;
+  right: 4px;
+  background-color: rgba(255, 0, 0, 0.76);
+  border-radius: 40px;
+  padding: 3px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.basket-button:hover {
+  cursor: pointer;
+}
+
+.basket-button .basket-icon {
+  object-fit: contain;
+  object-position: center;
+  height: 90%;
+  width: 90%;
+}
+
+.products-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex: 3;
+  padding: 2px 50px;
+  gap: 10px;
+}
+
+button {
+  padding: 5px 14px;
+  background-color: black;
+  color: white;
+  /*font-weight: bold;*/
+  font-size: 22px;
+  margin: 3px;
+  border: 0;
+}
+
+button:hover{
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.user-page-link{
+  color: blue;
+}
+
+.user-page-link:hover {
+  font-weight: bold;
+  cursor: pointer;
+}

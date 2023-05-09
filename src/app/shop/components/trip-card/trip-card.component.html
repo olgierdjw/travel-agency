@@ -1,0 +1,57 @@
+<div id="trip-card">
+
+    <div id="top-title">
+        {{ trip.name.toString() | uppercase }}
+    </div>
+
+    <div id="mid-container">
+        <div id="details">
+            {{trip.destination.toString() | uppercase}} <br/>
+            {{trip.startDate}} | {{trip.endDate}}
+        </div>
+
+        <div id="more-details">
+
+            <div id="left">
+                <div class="photo-place">
+                    <img src="/assets/img/{{trip.photoUrl}}.png" class="photo" routerLink="/trip/{{trip.id}}">
+                </div>
+            </div>
+
+            <div id="right">
+                {{trip.description}}
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="reservation-zone">
+
+        <ng-container *ngIf="trip.quantity <= 0">
+            <div> no places available</div>
+        </ng-container>
+
+        <ng-container *ngIf="trip.quantity > 0">
+            <div class="row-element" [ngStyle]="{    color: trip.quantity <= 3 ? 'red' : 'white'}">places
+                left: {{trip.quantity}}</div>
+            {{trip.price | currency: 'PLN'}}
+
+            <ng-container *ngIf="!previewOnly">
+                <button class="btn row-element"
+                        (click)="handleReservationIncrease()"
+                        [disabled]="!(trip.quantity > 0)">
+                    +
+                </button>
+
+                <div class="row-element">
+                    <button class="btn" *ngIf="canDelete" (click)="handleReservationDecrease()">-</button>
+                </div>
+            </ng-container>
+
+        </ng-container>
+
+    </div>
+</div>
+
+

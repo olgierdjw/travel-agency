@@ -1,0 +1,17 @@
+<div class="admin-panel">
+  <ng-container *ngIf="userList">
+    <div class="user-row" *ngFor="let user of userList">
+      <span style="font-weight: bold;">{{user.user_id}}</span>
+      <div class="permission-toggle">
+        manager <input type="checkbox" [checked]="user.rank.includes(1)" (click)="toggleUserPermission(user, 1)">
+      </div>
+      <div class="permission-toggle">
+        admin <input type="checkbox" [checked]="user.rank.includes(2)" (click)="toggleUserPermission(user, 2)">
+      </div>
+
+
+      <button (click)="toggleUserBan(user)">{{user.banned ? "odblokuj" : "zablokuj"}}</button>
+
+    </div>
+  </ng-container>
+</div>

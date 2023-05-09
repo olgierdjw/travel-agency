@@ -1,0 +1,23 @@
+#offer-list {
+  padding: 10px;
+  border-radius: 7px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reservations{
+  overflow: hidden;
+}
+
+#list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-gap: 22px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#list > * {
+  height: 350px;
+}

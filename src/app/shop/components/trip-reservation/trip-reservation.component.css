@@ -1,0 +1,44 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 0 5px;
+    padding: 4px;
+    border-radius: 7px;
+    height: 60px;
+    width: 320px;
+}
+
+
+.products-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.products-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.top button {
+    border-radius: 200px;
+    background-color: #343434;
+}
+
+.top button:hover {
+    background-color: red;
+    cursor: pointer;
+}
+

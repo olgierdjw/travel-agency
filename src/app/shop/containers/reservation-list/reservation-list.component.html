@@ -1,0 +1,31 @@
+<ng-container *ngIf="reservations.length; then cards; else nothing"></ng-container>
+
+
+<ng-template #cards>
+  <div class="reservation-list">
+    <div class="top">
+      <div class="summary"
+           [style.background-color]="totalQuantity >= 10 ? '#7ECC49' : 'rgba(177,17,41,0.58)'"
+      > Up to now, you have made {{totalQuantity}} reservations
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div *ngFor="let reservation of reservations; index as i">
+        <app-trip-reservation [trip]="reservation"
+                              (tripDecrease)="handleReservationDecrease($event)"></app-trip-reservation>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #nothing>
+  <div class="reservation-list" style="height: 50px">
+    <b style="font-size: 21px">No bookings have been made.</b>
+    <p>Add some.</p>
+  </div>
+</ng-template>
+
+
+
+

@@ -1,0 +1,45 @@
+<div class="offer-form">
+  <div class="title">
+
+  </div>
+
+  <form #form="ngForm" (ngSubmit)="handleSubmit(form)" class="form">
+    <label>
+      <span [style.color]="!name.invalid ? 'black' : 'red'">Name</span>
+      <input type="text" name="name" [value]="defaultData?.name" class="input" ngModel required #name="ngModel"/>
+    </label>
+    <label>
+      <span [style.color]="!cena.invalid ? 'black' : 'red'">Price</span>
+      <input type="number" name="price" [value]="defaultData?.price" class="input" ngModel required #cena="ngModel"/>
+    </label>
+    <label>
+      <span [style.color]="!dest.invalid ? 'black' : 'red'">Destination</span>
+      <input type="text" name="destination"  [value]="defaultData?.destination" class="input" ngModel required #dest="ngModel"/>
+    </label>
+    <label>
+      <span [style.color]="!desc.invalid ? 'black' : 'red'">Description</span>
+      <input type="text" name="description" [value]="defaultData?.description" class="input" ngModel required #desc="ngModel"/>
+    </label>
+    <label>
+      <span [style.color]="!sdate.invalid ? 'black' : 'red'">Start date</span>
+      <input type="date" name="startDate" [value]="defaultData?.startDate" class="input" ngModel required #sdate="ngModel"/>
+    </label>
+    <label>
+      <span [style.color]="!edate.invalid ? 'black' : 'red'">End date</span>
+      <input type="date" name="endDate" class="input" [value]="defaultData?.endDate" ngModel required #edate="ngModel"/>
+    </label>
+    <label>
+      <span [style.color]="!photo.invalid ? 'black' : 'red'">Photo</span>
+      <select name="photoUrl" class="input" ngModel required #photo="ngModel">
+        <option *ngFor="let icon of icons">{{icon}}</option>
+      </select>
+    </label>
+    <label>
+      <span [style.color]="!q.invalid ? 'black' : 'red'">Quantity</span>
+      <input type="number" name="quantity" [value]="defaultData?.quantity" class="input" [min]="0" ngModel required #q="ngModel"/>
+    </label>
+    <div class="finish">
+      <button type="submit" [disabled]="form.invalid">{{doneText}}</button>
+    </div>
+  </form>
+</div>

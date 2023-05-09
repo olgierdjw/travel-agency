@@ -1,0 +1,39 @@
+.offer-form {
+  border: 1px solid black;
+  width: 400px;
+  margin: 10px;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+label {
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  padding: 1px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  /*background-color: rgba(255, 127, 80, 0.51);*/
+  font-weight: bold;
+  font-size: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+}
+
+.form {
+  /*background-color: rgba(0, 0, 0, 0.19);*/
+  /*color: black;*/
+
+}
+
+.finish {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 10px;
+}

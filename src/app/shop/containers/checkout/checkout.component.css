@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+  min-width: 310px;
+}
+
+#title {
+  font-size: 30px;
+}
+
+
+.products-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 4px;
+  min-height: 200px;
+  margin: 10px 0;
+}
+
+.list-position {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  margin: 8px 0;
+}
+
+#summary {
+  font-size: 25px;
+}

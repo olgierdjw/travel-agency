@@ -1,0 +1,20 @@
+<div class="checkout">
+    <span id="title" *ngIf="totalSum">BASKET</span>
+    <p *ngIf="!totalSum">Book tours to see the value of your basket!</p>
+
+    <div class="products-list">
+        <div *ngFor="let tuple of total | keyvalue" class="list-position">
+            <div>
+                {{tuple.value.q}}  X <i> {{tuple.key}} </i>
+            </div>
+            <div>
+                PLN{{tuple.value.price * tuple.value.q}}
+                <button (click)="buyButton(tuple.value.tripId, tuple.value.reservationId)">buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="summary" *ngIf="totalSum">
+        TOTAL SUM: {{totalSum | currency: "PLN"}}
+    </div>
+</div>
